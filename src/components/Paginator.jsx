@@ -7,7 +7,7 @@ export function Paginator({ page, pages, onPage }) {
   return (
     <div className="max-w-6xl mx-auto px-4 py-4 flex items-center gap-2 justify-end text-sm">
       <button onClick={prev} className="px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50">Anterior</button>
-      <span className="text-gray-600">{page} / {pages}</span>
+      <span className="text-text-muted">{page} / {pages}</span>
       <button onClick={next} className="px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50">Siguiente</button>
     </div>
   );

@@ -8,7 +8,7 @@ export function Browse({ items, onFav, favs, page, perPage, onPage, onSpeakES, o
   const slice = items.slice(start, start + perPage);
   return (
     <>
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm border overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-card-background rounded-2xl shadow-sm border border-border overflow-hidden">
         <div className="grid md:grid-cols-12 gap-3 px-4 py-2 bg-gray-50 border-b text-[12px] font-semibold text-gray-600">
           <div className="md:col-span-2">Categoría</div>
           <div className="md:col-span-5">Español</div>

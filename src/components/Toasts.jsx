@@ -9,7 +9,7 @@ export function Toasts(){
   return (
     <div className="fixed bottom-4 right-4 z-50 space-y-2">
       {items.map(t=> (
-        <div key={t.id} className="px-3 py-2 rounded-xl shadow border bg-white text-sm dark:bg-slate-800 dark:text-slate-100 dark:border-slate-700">
+        <div key={t.id} className="px-3 py-2 rounded-xl shadow border bg-white text-sm bg-card-background text-text-base border-border">
           {t.text}
         </div>
       ))}

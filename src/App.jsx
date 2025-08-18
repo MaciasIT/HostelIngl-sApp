@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import initialData from "./hostelenglish_dataset_normalized.json";
 import { LS_FAVS_KEY, saveMetrics, loadSRS, loadMetrics, todayISO, uniqueSorted, nowMs, exportFile } from "./utils/helpers";
-import { useThemeDensity } from "./hooks/useThemeDensity";
+import { useTheme } from "./context/ThemeContext";
+
 import { useAudioPlus } from "./hooks/useAudioPlus";
 import { TopBar } from "./components/TopBar";
 import { Tabs } from "./components/Tabs";
@@ -72,7 +73,7 @@ export default function App() {
   const [timerStart, setTimerStart] = useState(null);
 
   // Tema/Densidad
-  const { theme, setTheme, density, setDensity } = useThemeDensity();
+  const { theme, setTheme, density, setDensity } = useTheme();
 
   // Audio+
   const { voices, prefs, setPrefs, playing, playSet, stop, speakOnce } = useAudioPlus();
@@ -159,7 +160,7 @@ export default function App() {
   }, [metrics]);
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-950">
+    <div className="min-h-screen bg-background">
       <TopBar total={raw.length} loaded={raw.length > 0} onFileLoaded={(arr) => setRaw(arr)} onExport={(type) => exportFile(filtered, type)} onAdminUpload={(pdfFile) => alert(`(Simulación) Subida de PDF: ${pdfFile.name}`)} dueCount={dueCount} kpis={kpis} theme={theme} setTheme={setTheme} density={density} setDensity={setDensity} />
 
       <div className="max-w-6xl mx-auto px-4 py-5">
@@ -183,10 +184,10 @@ export default function App() {
         {mode === "browse" && (
           <>
             <div className="flex items-center justify-between mb-2">
-              <div className="text-sm text-gray-600 dark:text-slate-300">Mostrando frases</div>
+              <div className="text-sm text-gray-600 text-text-muted">Mostrando frases</div>
               <div className="flex items-center gap-2 text-sm">
-                <label className="text-gray-500 dark:text-slate-400">Por página</label>
-                <select value={perPage} onChange={(e)=>setPerPage(Number(e.target.value))} className="rounded-xl border border-gray-300 px-2 py-1 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+                <label className="text-gray-500 text-text-muted">Por página</label>
+                <select value={perPage} onChange={(e)=>setPerPage(Number(e.target.value))} className="rounded-xl border border-gray-300 px-2 py-1 border-border bg-card-background text-text-base">
                   {[10,25,50,100].map((n)=>(<option key={n} value={n}>{n}</option>))}
                 </select>
               </div>
@@ -197,28 +198,28 @@ export default function App() {
 
         {mode === "flash" && (
           <div>
-            <div className="mb-2 text-sm text-gray-600 dark:text-slate-300">Modo Flashcards (máx. 200 cartas según filtro actual)</div>
+            <div className="mb-2 text-sm text-gray-600 text-text-muted">Modo Flashcards (máx. 200 cartas según filtro actual)</div>
             <Flashcards deck={filtered.slice(0,200)} onFav={toggleFav} favs={favs} onSpeakES={(t)=>speakOnce(t,'es-ES')} onSpeakEN={(t)=>speakOnce(t,'en-GB')} />
           </div>
         )}
 
         {mode === "quiz" && (
           <div>
-            <div className="mb-2 text-sm text-gray-600 dark:text-slate-300">Quiz de opción múltiple basado en el filtro actual</div>
+            <div className="mb-2 text-sm text-gray-600 text-text-muted">Quiz de opción múltiple basado en el filtro actual</div>
             <Quiz pool={filtered} onMetric={onMetric} />
           </div>
         )}
 
         {mode === "exam" && (
           <div>
-            <div className="mb-2 text-sm text-gray-600 dark:text-slate-300">Examen configurado sobre el filtro actual. Elige parámetros y comienza.</div>
+            <div className="mb-2 text-sm text-gray-600 text-text-muted">Examen configurado sobre el filtro actual. Elige parámetros y comienza.</div>
             <Exam pool={filtered} onMetric={onMetric} />
           </div>
         )}
 
         {mode === "study" && (
           <div>
-            <div className="mb-2 text-sm text-gray-600 dark:text-slate-300">Estudio programado (SRS). Se priorizan cartas vencidas; si no hay, se añaden nuevas del filtro.</div>
+            <div className="mb-2 text-sm text-gray-600 text-text-muted">Estudio programado (SRS). Se priorizan cartas vencidas; si no hay, se añaden nuevas del filtro.</div>
             <Study pool={filtered} srs={srs} setSrs={setSrs} onMetric={onMetric} />
           </div>
         )}
