@@ -71,6 +71,7 @@ export default function App() {
   const [srs, setSrs] = useState(() => loadSRS());
   const [metrics, setMetrics] = useState(() => loadMetrics());
   const [timerStart, setTimerStart] = useState(null);
+  const [isFocusMode, setIsFocusMode] = useState(false); // New state for focus mode
 
   // Tema/Densidad
   const { theme, setTheme, density, setDensity } = useTheme();
@@ -161,24 +162,32 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
-      <TopBar total={raw.length} loaded={raw.length > 0} onFileLoaded={(arr) => setRaw(arr)} onExport={(type) => exportFile(filtered, type)} onAdminUpload={(pdfFile) => alert(`(Simulación) Subida de PDF: ${pdfFile.name}`)} dueCount={dueCount} kpis={kpis} theme={theme} setTheme={setTheme} density={density} setDensity={setDensity} />
+      {!isFocusMode && (
+        <TopBar total={raw.length} loaded={raw.length > 0} onFileLoaded={(arr) => setRaw(arr)} onExport={(type) => exportFile(filtered, type)} onAdminUpload={(pdfFile) => alert(`(Simulación) Subida de PDF: ${pdfFile.name}`)} dueCount={dueCount} kpis={kpis} theme={theme} setTheme={setTheme} density={density} setDensity={setDensity} isFocusMode={isFocusMode} setIsFocusMode={setIsFocusMode} />
+      )}
 
-      <div className="max-w-6xl mx-auto px-4 py-5">
-        <Tabs mode={mode} onMode={setMode} dueCount={dueCount} />
-      </div>
+      {!isFocusMode && (
+        <div className="max-w-6xl mx-auto px-4 py-5">
+          <Tabs mode={mode} onMode={setMode} dueCount={dueCount} />
+        </div>
+      )}
 
       {/* Audio+ Controls */}
-      <AudioBar
-        voices={voices}
-        prefs={prefs}
-        setPrefs={setPrefs}
-        playing={playing}
-        onPlayAll={()=>playSet(filtered)}
-        onStop={stop}
-        sample={(lang)=>{ if(lang==='es'){ speakOnce('Ejemplo de voz en español','es-ES'); } else { speakOnce('Sample of English voice','en-GB'); } }}
-      />
+      {!isFocusMode && (
+        <AudioBar
+          voices={voices}
+          prefs={prefs}
+          setPrefs={setPrefs}
+          playing={playing}
+          onPlayAll={()=>playSet(filtered)}
+          onStop={stop}
+          sample={(lang)=>{ if(lang==='es'){ speakOnce('Ejemplo de voz en español','es-ES'); } else { speakOnce('Sample of English voice','en-GB'); } }}
+        />
+      )}
 
-      <Filters categories={categories} value={category} onChange={setCategory} query={query} onQuery={setQuery} count={filtered.length} />
+      {!isFocusMode && (
+        <Filters categories={categories} value={category} onChange={setCategory} query={query} onQuery={setQuery} count={filtered.length} />
+      )}
 
       <div className="max-w-6xl mx-auto px-4 pb-10">
         {mode === "browse" && (
