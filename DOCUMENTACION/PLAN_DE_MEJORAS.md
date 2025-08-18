@@ -4,11 +4,11 @@ Este documento detalla una serie de mejoras y nuevas funcionalidades que podría
 
 ## I. Mejoras en la Experiencia de Usuario (UX) y la Interfaz de Usuario (UI)
 
-1.  **Personalización de Temas Avanzada:**
+1.  **Personalización de Temas Avanzada (Implementado):**
     *   **Descripción:** Permitir al usuario elegir entre una gama más amplia de temas visuales (no solo claro/oscuro) o incluso personalizar esquemas de colores específicos.
     *   **Beneficio:** Mayor adaptabilidad a las preferencias del usuario, mejorando la comodidad visual y la experiencia general.
 
-2.  **Notificaciones Mejoradas:**
+2.  **Notificaciones Mejoradas (Implementado):**
     *   **Descripción:** Implementar un sistema de notificaciones más robusto y configurable para recordatorios de estudio, logros alcanzados, nuevas funcionalidades, etc. Esto iría más allá de los mensajes "toast" actuales.
     *   **Beneficio:** Mantener al usuario comprometido y al tanto de su progreso y de las novedades de la aplicación.
 
