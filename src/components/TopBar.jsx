@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import toast from 'react-hot-toast';
 import { ThemeSelector } from "./ThemeSelector"; // Import ThemeSelector
 
 export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, dueCount, kpis, theme, setTheme, density, setDensity }) {
@@ -21,7 +22,7 @@ export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, d
         <button onClick={() => onExport("json")} title="Exportar JSON" className="⬇ JSON" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ JSON</button>
         <button onClick={() => onExport("csv")} title="Exportar CSV" className="⬇ CSV" className="px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ CSV</button>
         <button onClick={() => pdfRef.current?.click()} title="Subir PDF (Admin)" className="⬆ Admin PDF" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬆ Admin PDF</button>
-        <input ref={pdfRef} type="file" accept="application/pdf" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; onAdminUpload(f); window.dispatchEvent(new CustomEvent('toast', { detail: 'PDF subido (simulación)' })); }} />
+        <input ref={pdfRef} type="file" accept="application/pdf" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; onAdminUpload(f); toast.success('PDF subido (simulación)'); }} />
         <div className="h-6 w-px bg-gray-200 mx-2 bg-border" />
         <ThemeSelector /> {/* New ThemeSelector component */}
         <select value={density} onChange={(e)=> setDensity(e.target.value)} title="Densidad de interfaz" className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">

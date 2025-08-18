@@ -1,5 +1,7 @@
 
 
+import toast from 'react-hot-toast';
+
 // ---------- Constantes/Utils ----------
 export const LS_FAVS_KEY = "hosteleria:favs";
 export const LS_SRS_KEY = "hosteleria:srs"; // id -> {ease, interval, reps, due}
@@ -26,12 +28,12 @@ export function exportFile(items, type = "json") {
   if (type === "json") {
     const blob = new Blob([JSON.stringify(items, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob); const a=document.createElement("a"); a.href=url; a.download="export.json"; a.click(); URL.revokeObjectURL(url);
-    window.dispatchEvent(new CustomEvent('toast', { detail: 'Export JSON generado' }));
+    toast.success('Export JSON generado');
   } else if (type === "csv") {
     const csv = toCSVString(items);
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob); const a=document.createElement("a"); a.href=url; a.download="export.csv"; a.click(); URL.revokeObjectURL(url);
-    window.dispatchEvent(new CustomEvent('toast', { detail: 'Export CSV generado' }));
+    toast.success('Export CSV generado');
   }
 }
 
