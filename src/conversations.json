@@ -1,0 +1,60 @@
+{
+  "conversations": [
+    {
+      "id": "conv1",
+      "title": "Haciendo el check-in en el hotel",
+      "scenario": "Un cliente llega al mostrador de recepción para registrarse.",
+      "participants": [
+        "Recepcionista",
+        "Huésped"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Recepcionista",
+          "es": "Buenas tardes, bienvenido al Grand Palace Hotel. ¿En qué puedo ayudarle?",
+          "en": "Good afternoon, welcome to the Grand Palace Hotel. How can I help you?"
+        },
+        {
+          "speaker": "Huésped",
+          "es": "Hola, tengo una reserva a nombre de García.",
+          "en": "Hello, I have a reservation under the name of Garcia."
+        },
+        {
+          "speaker": "Recepcionista",
+          "es": "Un momento, por favor... Sí, aquí está. Una habitación doble para tres noches. ¿Es correcto?",
+          "en": "One moment, please... Yes, here it is. A double room for three nights. Is that correct?"
+        },
+        {
+          "speaker": "Huésped",
+          "es": "Sí, es correcto.",
+          "en": "Yes, that's correct."
+        },
+        {
+          "speaker": "Recepcionista",
+          "es": "Perfecto. ¿Podría darme su pasaporte y una tarjeta de crédito, por favor?",
+          "en": "Perfect. Could I have your passport and a credit card, please?"
+        },
+        {
+          "speaker": "Huésped",
+          "es": "Claro, aquí tiene.",
+          "en": "Of course, here you are."
+        },
+        {
+          "speaker": "Recepcionista",
+          "es": "Gracias. Por favor, rellene este formulario de registro. El desayuno se sirve de 7 a 10 de la mañana en el restaurante del primer piso.",
+          "en": "Thank you. Please fill out this registration form. Breakfast is served from 7 to 10 a.m. in the first-floor restaurant."
+        },
+        {
+          "speaker": "Recepcionista",
+          "es": "Aquí tiene la llave de su habitación. Es la 405, en el cuarto piso. El ascensor está al final del pasillo a la derecha. ¡Disfrute de su estancia!",
+          "en": "Here is your room key. It's room 405, on the fourth floor. The elevator is at the end of the hall to your right. Enjoy your stay!"
+        },
+        {
+          "speaker": "Huésped",
+          "es": "Muchas gracias.",
+          "en": "Thank you very much."
+        }
+      ]
+    }
+  ]
+}
