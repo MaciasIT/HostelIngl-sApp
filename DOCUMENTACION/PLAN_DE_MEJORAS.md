@@ -12,11 +12,11 @@ Este documento detalla una serie de mejoras y nuevas funcionalidades que podría
     *   **Descripción:** Implementar un sistema de notificaciones más robusto y configurable para recordatorios de estudio, logros alcanzados, nuevas funcionalidades, etc. Esto iría más allá de los mensajes "toast" actuales.
     *   **Beneficio:** Mantener al usuario comprometido y al tanto de su progreso y de las novedades de la aplicación.
 
-3.  **Feedback Visual en Flashcards/Quiz/Estudio:**
+3.  **Feedback Visual en Flashcards/Quiz/Estudio (Implementado):**
     *   **Descripción:** Añadir animaciones sutiles o feedback visual más claro (ej. cambios de color, iconos de acierto/error) al responder correctamente o incorrectamente en los modos de estudio.
     *   **Beneficio:** Proporcionar una retroalimentación instantánea y más atractiva, reforzando el aprendizaje y la interacción.
 
-4.  **Modo de Enfoque/Inmersión:**
+4.  **Modo de Enfoque/Inmersión (Implementado):**
     *   **Descripción:** Desarrollar una opción que permita al usuario ocultar temporalmente la barra superior, la barra de audio y otros elementos de la interfaz que puedan ser una distracción durante las sesiones intensivas de estudio.
     *   **Beneficio:** Minimizar las distracciones y ayudar al usuario a concentrarse plenamente en el material de estudio.
 
