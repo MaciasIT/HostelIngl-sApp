@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { ThemeSelector } from "./ThemeSelector"; // Import ThemeSelector
 
 export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, dueCount, kpis, theme, setTheme, density, setDensity }) {
   const fileRef = useRef(null);
@@ -22,7 +23,7 @@ export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, d
         <button onClick={() => pdfRef.current?.click()} title="Subir PDF (Admin)" className="⬆ Admin PDF" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬆ Admin PDF</button>
         <input ref={pdfRef} type="file" accept="application/pdf" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; onAdminUpload(f); window.dispatchEvent(new CustomEvent('toast', { detail: 'PDF subido (simulación)' })); }} />
         <div className="h-6 w-px bg-gray-200 mx-2 bg-border" />
-        <button onClick={()=> setTheme(theme==='dark'?'light':'dark')} title={theme==='dark'?'Cambiar a claro':'Cambiar a oscuro'} className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm dark:border-slate-700 dark:text-slate-100">{theme==='dark'?'☀️':'🌙'}</button>
+        <ThemeSelector /> {/* New ThemeSelector component */}
         <select value={density} onChange={(e)=> setDensity(e.target.value)} title="Densidad de interfaz" className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">
           <option value="comfortable">Cómodo</option>
           <option value="compact">Compacto</option>
