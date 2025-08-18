@@ -75,3 +75,7 @@ Este documento detalla una serie de mejoras y nuevas funcionalidades que podría
 15. **Internacionalización (i18n):**
     *   **Descripción:** Preparar la aplicación para soportar múltiples idiomas de interfaz de usuario, separando los textos de la UI del código. Aunque el contenido principal sea inglés/español, la interfaz podría estar en otros idiomas.
     *   **Beneficio:** Abrir la aplicación a usuarios que prefieran interactuar con la interfaz en su idioma nativo, incluso si están aprendiendo inglés/español.
+
+16. **Frameworks de UI:**
+    *   **Descripción:** Considerar el uso de librerías de componentes como shadcn/ui o Headless UI para construir interfaces más robustas, accesibles y con un desarrollo más eficiente. Estas librerías proporcionan componentes pre-construidos y accesibles que se integran bien con Tailwind CSS.
+    *   **Beneficio:** Acelerar el desarrollo de la UI, asegurar la accesibilidad de los componentes y mantener una alta calidad visual y funcional.
