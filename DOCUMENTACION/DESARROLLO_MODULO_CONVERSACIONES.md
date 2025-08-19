@@ -26,3 +26,9 @@ Se han realizado los siguientes cambios para integrar el nuevo módulo en la apl
 
 -   **Reproducción de diálogo completo**: Se ha añadido un botón "Reproducir todo" en la vista de conversación. Al pulsarlo, se utiliza la funcionalidad existente de `useAudioPlus` para reproducir secuencialmente todas las líneas de diálogo de la conversación, alternando entre español e inglés según la configuración del modo de audio.
 
+## 4. Modo Role-Playing
+
+-   **Selección de Rol**: Se ha añadido un selector en la vista de conversación que permite al usuario elegir un rol (participante) de la conversación.
+-   **Ocultar líneas**: Cuando se selecciona un rol, las líneas de diálogo de ese participante se ocultan, mostrando en su lugar un botón de "Mostrar línea".
+-   **Interacción**: Al pulsar el botón, se revela la línea oculta, permitiendo al usuario practicar su parte de la conversación y luego comprobar su precisión.
+
