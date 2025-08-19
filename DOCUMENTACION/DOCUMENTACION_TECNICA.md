@@ -32,6 +32,11 @@ Para levantar el proyecto en un entorno local, sigue estos pasos:
 ├── src/
 │   ├── assets/
 │   │   └── react.svg
+│   ├── components/              <-- Componentes de la UI
+│   ├── context/
+│   ├── hooks/
+│   ├── utils/
+│   ├── conversations_extended_v4.json  <-- Dataset de conversaciones
 │   ├── hostelenglish_dataset_normalized.json  <-- El dataset principal
 │   ├── App.jsx                                <-- Componente raíz con toda la lógica
 │   ├── index.css                              <-- Estilos base de Tailwind
@@ -79,13 +84,18 @@ Aunque todo está en un solo archivo, la UI se puede descomponer lógicamente en
 - `Filters`: Los controles de filtrado por categoría y búsqueda.
 - `AudioBar`: Los controles para la reproducción de audio (voces, velocidad).
 - `Browse` y `PhraseRow`: La vista de tabla para explorar frases.
+- `Conversations` y `Conversation`: El nuevo módulo para explorar diálogos interactivos.
 - `Flashcards`: El modo de tarjetas de estudio.
 - `Quiz`: El modo de test de opción múltiple.
 - `Exam`: El modo de examen configurable.
 - `Study`: El modo de estudio con SRS.
 - `Dashboard`: El panel de estadísticas del usuario.
 
-## 6. Posibles Mejoras a Futuro
+## 6. Módulo de Conversaciones
+
+El módulo de conversaciones se carga desde `src/conversations_extended_v4.json` y permite a los usuarios explorar diálogos interactivos. La lógica principal reside en `App.jsx`, que gestiona la selección de conversaciones y el estado de la interfaz. Los componentes `Conversations.jsx` y `Conversation.jsx` se encargan de la renderización.
+
+## 7. Posibles Mejoras a Futuro
 
 - **Refactorización a Componentes**: La mejora más importante sería dividir `App.jsx` en archivos de componentes separados para mejorar la legibilidad y el mantenimiento.
 - **Backend y Cuentas de Usuario**: Para un progreso persistente entre dispositivos, se podría añadir un backend (ej. Firebase, Supabase) para gestionar usuarios y almacenar sus datos.

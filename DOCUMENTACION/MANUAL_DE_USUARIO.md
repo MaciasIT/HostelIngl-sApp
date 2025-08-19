@@ -25,28 +25,39 @@ Es la vista principal. Aquí puedes explorar la lista completa de frases.
 - **Audio**: Pulsa el botón **🔊 ES** o **🔊 EN** para escuchar la pronunciación de cada frase.
 - **Favoritos**: Marca una frase como favorita pulsando el icono de la estrella (☆). Las frases favoritas se pueden usar para filtrar en el futuro (funcionalidad pendiente).
 
-### 3.2. Flashcards
+### 3.2. Conversaciones
+
+Este nuevo modo te permite explorar diálogos completos en diferentes escenarios de hostelería.
+
+- **Explorar Conversaciones**: En la vista principal, verás una lista de conversaciones con su título y escenario. Haz clic en una para ver el diálogo completo.
+- **Diálogo Interactivo**: Dentro de una conversación, las frases en inglés están ocultas por defecto. Haz clic en la frase en español para revelar su traducción.
+- **Audio Individual**: Escucha la pronunciación de cada línea en español o inglés con los botones 🔊.
+- **Reproducir Todo**: Usa el botón "▶ Reproducir todo" para escuchar la conversación completa de principio a fin.
+- **Modo Role-Playing**: Selecciona un rol (ej. "Recepcionista") en el menú desplegable "Tu Rol". Las líneas de ese personaje se ocultarán para que puedas practicar diciéndolas. Haz clic en "Mostrar línea" para ver el texto original y comprobar tu precisión.
+- **Añadir a Estudio**: Cada línea de diálogo tiene un botón "⭐ Añadir a estudio" para que puedas guardar frases útiles en tu lista principal y practicarlas más tarde en los otros modos.
+
+### 3.3. Flashcards
 
 Este modo te presenta las frases como tarjetas de estudio (flashcards).
 
 - **Voltear la tarjeta**: Haz clic en la tarjeta o pulsa la barra espaciadora para revelar la traducción.
 - **Navegar**: Usa las flechas (← y →) del teclado o los botones "Anterior" y "Siguiente" para moverte por el set de frases (que respeta el filtro que hayas seleccionado).
 
-### 3.3. Quiz
+### 3.4. Quiz
 
 Pon a prueba tus conocimientos con un test de opción múltiple. 
 
 - Se te presentará una frase en español y deberás elegir la traducción correcta en inglés entre varias opciones.
 - Al final del quiz, verás tu puntuación.
 
-### 3.4. Examen
+### 3.5. Examen
 
 Un modo más formal y configurable para evaluarte.
 
 - **Configuración**: Antes de empezar, puedes elegir la dirección de la traducción (ES → EN o EN → ES), el número de preguntas y si quieres que sea cronometrado.
 - **Resultados**: Al terminar, verás tu puntuación y un repaso de los fallos para que puedas aprender de ellos.
 
-### 3.5. Estudio (Repetición Espaciada - SRS)
+### 3.6. Estudio (Repetición Espaciada - SRS)
 
 Este es el modo de estudio más potente. Utiliza un algoritmo de repetición espaciada (Spaced Repetition System) para mostrarte las tarjetas justo antes de que las olvides.
 
