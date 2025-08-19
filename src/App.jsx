@@ -173,6 +173,11 @@ export default function App() {
     setSelectedConversation(null);
   };
 
+  const playConversation = (conversation) => {
+    const phrases = conversation.dialogue.map(line => ({ es: line.es, en: line.en }));
+    playSet(phrases);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {!isFocusMode && (
@@ -220,7 +225,7 @@ export default function App() {
 
         {mode === "conversations" && (
           selectedConversation ? (
-            <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} />
+            <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} onPlayAll={() => playConversation(selectedConversation)} />
           ) : (
             <Conversations conversations={conversations} onSelectConversation={onSelectConversation} />
           )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function Conversation({ conversation, onBack, onSpeak }) {
+export function Conversation({ conversation, onBack, onSpeak, onPlayAll }) {
   const [revealed, setRevealed] = useState({});
 
   const toggleReveal = (index) => {
@@ -10,8 +10,13 @@ export function Conversation({ conversation, onBack, onSpeak }) {
   return (
     <div className="max-w-2xl mx-auto">
       <button onClick={onBack} className="mb-4 px-3 py-1.5 rounded-xl border border-border text-sm text-text-base hover:bg-background">← Volver a conversaciones</button>
-      <h2 className="text-2xl font-bold mb-2 text-text-base">{conversation.title}</h2>
-      <p className="text-sm text-text-muted mb-4">{conversation.scenario}</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold mb-2 text-text-base">{conversation.title}</h2>
+          <p className="text-sm text-text-muted mb-4">{conversation.scenario}</p>
+        </div>
+        <button onClick={onPlayAll} className="px-3 py-1.5 rounded-xl border border-border text-sm text-text-base hover:bg-background">▶ Reproducir todo</button>
+      </div>
       
       <div className="space-y-4">
         {conversation.dialogue.map((line, index) => (

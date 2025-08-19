@@ -22,3 +22,7 @@ Se han realizado los siguientes cambios para integrar el nuevo módulo en la apl
 
 -   **`Tabs.jsx`**: Se ha añadido una nueva pestaña "Conversaciones" a la barra de navegación principal para que los usuarios puedan acceder al nuevo módulo.
 
+## 3. Funcionalidad de Audio
+
+-   **Reproducción de diálogo completo**: Se ha añadido un botón "Reproducir todo" en la vista de conversación. Al pulsarlo, se utiliza la funcionalidad existente de `useAudioPlus` para reproducir secuencialmente todas las líneas de diálogo de la conversación, alternando entre español e inglés según la configuración del modo de audio.
+
