@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import initialData from "./hostelenglish_dataset_extended_v4.json";
+import initialData from "./hostelenglish_dataset_clean.json";
 import conversationsData from "./conversations_extended_v4.json";
 import { LS_FAVS_KEY, saveMetrics, loadSRS, loadMetrics, todayISO, uniqueSorted, nowMs, exportFile } from "./utils/helpers";
 import { useTheme } from "./context/ThemeContext";
@@ -23,37 +23,7 @@ import { Documentation } from "./components/Documentation";
 export default function App() {
   const [raw, setRaw] = useState(() => {
     const phrases = initialData.phrases || [];
-    let currentCategory = 'General'; // Default category
-    const categoryRegex = /^[IVXLCDM]+\.\s*(.*)/; // Regex to capture category text
-
-    const processedPhrases = [];
-    phrases.forEach(phrase => {
-      const es = phrase.spanish || '';
-      const match = es.match(categoryRegex);
-
-      if (match) {
-        // This is a category phrase, update currentCategory and skip adding to processedPhrases
-        currentCategory = match[1].trim();
-      } else {
-        // This is a regular phrase
-        let cleanEs = es;
-        // Clean up extraneous text from the dataset
-        const extraneousText1 = "Este listado abarca las frases más comunes y útiles para un camarero en un entorno de hostelería, permitiendo una comunicación fluida y profesional con clientes de habla inglesa.";
-        if (cleanEs.includes(extraneousText1)) {
-          cleanEs = cleanEs.replace(extraneousText1, '').trim();
-        }
-        
-        processedPhrases.push({
-          es: cleanEs,
-          en: phrase.english,
-          source: phrase.source,
-          categoria: currentCategory,
-        });
-      }
-    });
-
-    // Add unique IDs after processing
-    return processedPhrases.map((phrase, index) => ({
+    return phrases.map((phrase, index) => ({
       ...phrase,
       id: index,
     }));
