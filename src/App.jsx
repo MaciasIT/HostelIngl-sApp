@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import initialData from "./hostelenglish_dataset_normalized.json";
+import initialData from "./hostelenglish_dataset_extended_v4.json";
 import { LS_FAVS_KEY, saveMetrics, loadSRS, loadMetrics, todayISO, uniqueSorted, nowMs, exportFile } from "./utils/helpers";
 import { useTheme } from "./context/ThemeContext";
 

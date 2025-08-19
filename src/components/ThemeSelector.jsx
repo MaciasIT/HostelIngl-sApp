@@ -21,17 +21,21 @@ export function ThemeSelector() {
   };
 
   return (
-    <select
-      value={theme}
-      onChange={handleThemeChange}
-      title="Seleccionar Tema"
-      className="px-2 py-1.5 rounded-xl border border-border text-sm bg-card-background text-text-base"
-    >
-      {themes.map((t) => (
-        <option key={t.id} value={t.id}>
-          {t.name}
-        </option>
-      ))}
-    </select>
+    <div className="flex items-center gap-2">
+      <label htmlFor="theme-selector" className="text-sm text-text-muted">Tema:</label>
+      <select
+        id="theme-selector"
+        value={theme}
+        onChange={handleThemeChange}
+        aria-label="Seleccionar Tema"
+        className="px-2 py-1.5 rounded-xl border border-border text-sm bg-card-background text-text-base"
+      >
+        {themes.map((t) => (
+          <option key={t.id} value={t.id}>
+            {t.name}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }

@@ -17,25 +17,29 @@ export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, d
         </div>
         <div className="flex-1" />
         <span className="hidden md:inline-flex items-center text-xs text-gray-600 text-text-muted mr-2" title="Tarjetas vencidas hoy">🔁 Estudio hoy: <b className="ml-1">{dueCount}</b></span>
-        <button onClick={() => fileRef.current?.click()} title="Importar JSON" className="px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 text-sm border-border hover:bg-background text-text-base">Importar JSON</button>
+        <button onClick={() => fileRef.current?.click()} title="Importar JSON" aria-label="Importar archivo JSON" className="px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 text-sm border-border hover:bg-background text-text-base">Importar JSON</button>
         <input ref={fileRef} type="file" accept="application/json" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; const text = await f.text(); try { const data = JSON.parse(text); const normalized = Array.isArray(data) ? data : data.items || []; onFileLoaded(normalized); window.dispatchEvent(new CustomEvent('toast', { detail: 'Dataset importado' })); } catch { alert("Archivo JSON inválido"); } }} />
-        <button onClick={() => onExport("json")} title="Exportar JSON" className="⬇ JSON" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ JSON</button>
-        <button onClick={() => onExport("csv")} title="Exportar CSV" className="⬇ CSV" className="px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ CSV</button>
-        <button onClick={() => pdfRef.current?.click()} title="Subir PDF (Admin)" className="⬆ Admin PDF" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬆ Admin PDF</button>
+        <button onClick={() => onExport("json")} title="Exportar JSON" aria-label="Exportar a formato JSON" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ JSON</button>
+        <button onClick={() => onExport("csv")} title="Exportar CSV" aria-label="Exportar a formato CSV" className="px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬇ CSV</button>
+        <button onClick={() => pdfRef.current?.click()} title="Subir PDF (Admin)" aria-label="Subir PDF de administrador" className="ml-2 px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">⬆ Admin PDF</button>
         <input ref={pdfRef} type="file" accept="application/pdf" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; onAdminUpload(f); toast.success('PDF subido (simulación)'); }} />
         <div className="h-6 w-px bg-gray-200 mx-2 bg-border" />
         <button
           onClick={() => setIsFocusMode(!isFocusMode)}
           title={isFocusMode ? "Desactivar Modo Enfoque" : "Activar Modo Enfoque"}
+          aria-label={isFocusMode ? "Desactivar Modo Enfoque" : "Activar Modo Enfoque"}
           className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base"
         >
           {isFocusMode ? "👁️" : "👁️‍🗨️"}
         </button>
         <ThemeSelector /> {/* New ThemeSelector component */}
-        <select value={density} onChange={(e)=> setDensity(e.target.value)} title="Densidad de interfaz" className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">
-          <option value="comfortable">Cómodo</option>
-          <option value="compact">Compacto</option>
-        </select>
+        <div className="flex items-center gap-2">
+          <label htmlFor="density-selector" className="text-sm text-text-muted">Densidad:</label>
+          <select id="density-selector" value={density} onChange={(e)=> setDensity(e.target.value)} aria-label="Seleccionar densidad de la interfaz" className="px-2 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">
+            <option value="comfortable">Cómodo</option>
+            <option value="compact">Compacto</option>
+          </select>
+        </div>
       </div>
     </div>
   );

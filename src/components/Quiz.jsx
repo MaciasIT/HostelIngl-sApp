@@ -45,7 +45,7 @@ export function Quiz({ pool, onMetric }) {
   if (done) return (
     <div className="max-w-xl mx-auto mt-6 text-center">
       <div className="text-2xl font-semibold text-text-base">Resultado: {score} / {questions.length}</div>
-      <button onClick={() => { const base = pickRandom(pool, Math.min(8, pool.length)); const qs = base.map((item) => { const wrongs = pickRandom(pool.filter((x) => x.id !== item.id), 3).map((x) => x.en); const options = pickRandom([item.en, ...wrongs], Math.min(4, 1 + wrongs.length)); return { item, options }; }); setQuestions(qs); setIdx(0); setScore(0); setDone(false); setSelectedAnswer(null); setIsCorrect(null); }} className="mt-4 px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">Reintentar</button>
+      <button onClick={() => { const base = pickRandom(pool, Math.min(8, pool.length)); const qs = base.map((item) => { const wrongs = pickRandom(pool.filter((x) => x.id !== item.id), 3).map((x) => x.en); const options = pickRandom([item.en, ...wrongs], Math.min(4, 1 + wrongs.length)); return { item, options }; }); setQuestions(qs); setIdx(0); setScore(0); setDone(false); setSelectedAnswer(null); setIsCorrect(null); }} aria-label="Reintentar el quiz" className="mt-4 px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">Reintentar</button>
     </div>
   );
 
@@ -59,14 +59,15 @@ export function Quiz({ pool, onMetric }) {
           <button
             key={i}
             onClick={() => onPick(opt)}
+            aria-label={`Seleccionar opción: ${opt}`}
             className={classNames(
               "text-left px-3 py-2 rounded-xl border border-gray-300 hover:bg-gray-50 border-border text-text-muted hover:bg-card-background",
               selectedAnswer !== null && (
-                opt === q.item.en && "bg-green-100 text-green-800 border-green-300" // Correct answer
+                opt === q.item.en && "bg-green-100 text-green-800 border-green-300"
               ),
-              selectedAnswer === opt && !isCorrect && "bg-red-100 text-red-800 border-red-300" // Incorrect selected answer
+              selectedAnswer === opt && !isCorrect && "bg-red-100 text-red-800 border-red-300"
             )}
-            disabled={selectedAnswer !== null} // Disable after selection
+            disabled={selectedAnswer !== null}
           >
             {opt}
           </button>

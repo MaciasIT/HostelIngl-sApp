@@ -38,23 +38,25 @@ export function Exam({ pool, onMetric }) {
       <div className="text-lg font-semibold text-text-base">Configurar examen</div>
       <div className="mt-3 grid gap-3">
         <div>
-          <div className="text-sm text-gray-600 text-text-muted mb-1">Dirección</div>
-          <div className="flex items-center gap-2 text-sm text-text-base">
-            <label className="inline-flex items-center gap-1"><input type="radio" name="dir" checked={dir==="es2en"} onChange={()=>setDir("es2en")} /> ES → EN</label>
-            <label className="inline-flex items-center gap-1"><input type="radio" name="dir" checked={dir==="en2es"} onChange={()=>setDir("en2es")} /> EN → ES</label>
-          </div>
+          <fieldset>
+            <legend className="text-sm text-gray-600 text-text-muted mb-1">Dirección</legend>
+            <div className="flex items-center gap-2 text-sm text-text-base">
+              <label className="inline-flex items-center gap-1"><input type="radio" name="dir" checked={dir==="es2en"} onChange={()=>setDir("es2en")} /> ES → EN</label>
+              <label className="inline-flex items-center gap-1"><input type="radio" name="dir" checked={dir==="en2es"} onChange={()=>setDir("en2es")} /> EN → ES</label>
+            </div>
+          </fieldset>
         </div>
         <div>
-          <div className="text-sm text-gray-600 text-text-muted mb-1">Número de preguntas</div>
-          <select className="rounded-xl border border-gray-300 px-3 py-2 text-sm bg-card-background border-border text-text-base" value={len} onChange={(e)=>setLen(Number(e.target.value))}>
-            {[10,15,20].map(n=> <option key={n} value={n}>{n}</option>)}
+          <label htmlFor="exam-length" className="text-sm text-gray-600 text-text-muted mb-1">Número de preguntas</label>
+          <select id="exam-length" className="rounded-xl border border-gray-300 px-3 py-2 text-sm bg-card-background border-border text-text-base" value={len} onChange={(e)=>setLen(Number(e.target.value))}>
+            {[10,15,20].map(n=> <option key={n} value={n}>{n}</option>)} 
           </select>
         </div>
         <div className="flex items-center gap-2 text-sm text-text-base">
           <input id="timed" type="checkbox" checked={timed} onChange={(e)=>setTimed(e.target.checked)} />
           <label htmlFor="timed">Activar tiempo (≈25s por pregunta)</label>
         </div>
-        <button onClick={build} className="mt-1 px-3 py-2 rounded-xl border border-gray-300 hover:bg-gray-50 text-sm border-border text-text-muted hover:bg-card-background">Iniciar examen</button>
+        <button onClick={build} aria-label="Iniciar el examen con la configuración actual" className="mt-1 px-3 py-2 rounded-xl border border-gray-300 hover:bg-gray-50 text-sm border-border text-text-muted hover:bg-card-background">Iniciar examen</button>
         <p className="text-xs text-gray-500 text-text-muted">El examen usa el **filtro actual** (categoría/búsqueda) como pool.</p>
       </div>
     </div>
@@ -65,7 +67,7 @@ export function Exam({ pool, onMetric }) {
       <div className="bg-white rounded-2xl border shadow-sm p-5 text-center bg-card-background border-border">
         <div className="text-2xl font-semibold text-text-base">Resultado: {score} / {items.length}</div>
         <div className="text-sm text-gray-600 text-text-muted mt-1">Aciertos: {score} · Fallos: {items.length - score}</div>
-        <button onClick={()=>{ setStarted(false); }} className="mt-4 px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700">Nuevo examen</button>
+        <button onClick={()=>{ setStarted(false); }} aria-label="Empezar un nuevo examen" className="mt-4 px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-700">Nuevo examen</button>
       </div>
       {mistakes.length > 0 && (
         <div className="mt-4 bg-white rounded-2xl border shadow-sm p-5 bg-card-background border-border">
@@ -90,13 +92,13 @@ export function Exam({ pool, onMetric }) {
     <div className="max-w-xl mx-auto mt-6 bg-white rounded-2xl border shadow-sm p-5 bg-card-background border-border">
       <div className="flex items-center justify-between text-xs text-gray-500 text-text-muted">
         <div>Pregunta {idx + 1} / {items.length}</div>
-        {timed && <div>⏱ {Math.floor(secondsLeft/60).toString().padStart(2,'0')}:{(secondsLeft%60).toString().padStart(2,'0')}</div>}
+        {timed && <div role="timer" aria-live="polite">⏱ {Math.floor(secondsLeft/60).toString().padStart(2,'0')}:{(secondsLeft%60).toString().padStart(2,'0')}</div>}
       </div>
       <div className="mt-2 text-lg text-text-base">Traduce {dir === "es2en" ? "al inglés" : "al español"}:</div>
       <div className="mt-1 text-2xl font-semibold text-text-base">{q.prompt}</div>
       <div className="mt-4 grid gap-2">
         {q.options.map((opt, i) => (
-          <button key={i} onClick={() => onPick(opt)} className="text-left px-3 py-2 rounded-xl border border-gray-300 hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">{opt}</button>
+          <button key={i} onClick={() => onPick(opt)} aria-label={`Seleccionar opción: ${opt}`} className="text-left px-3 py-2 rounded-xl border border-gray-300 hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">{opt}</button>
         ))}
       </div>
     </div>
