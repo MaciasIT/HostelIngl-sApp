@@ -32,3 +32,8 @@ Se han realizado los siguientes cambios para integrar el nuevo módulo en la apl
 -   **Ocultar líneas**: Cuando se selecciona un rol, las líneas de diálogo de ese participante se ocultan, mostrando en su lugar un botón de "Mostrar línea".
 -   **Interacción**: Al pulsar el botón, se revela la línea oculta, permitiendo al usuario practicar su parte de la conversación y luego comprobar su precisión.
 
+## 5. Integración con el Módulo de Estudio
+
+-   **Añadir Frases a Estudio**: Cada línea de diálogo en una conversación ahora tiene un botón "⭐ Añadir a estudio".
+-   **Funcionalidad**: Al hacer clic en este botón, la frase (tanto en español como en inglés) se añade a la lista principal de frases de la aplicación. Esto permite que la frase pueda ser utilizada en los otros modos de estudio, como Flashcards, Quiz y, lo más importante, el sistema de repetición espaciada (SRS) del modo "Estudio".
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function Conversation({ conversation, onBack, onSpeak, onPlayAll }) {
+export function Conversation({ conversation, onBack, onSpeak, onPlayAll, onAddToStudy }) {
   const [revealed, setRevealed] = useState({});
   const [role, setRole] = useState('all');
 
@@ -47,6 +47,7 @@ export function Conversation({ conversation, onBack, onSpeak, onPlayAll }) {
               <div className="flex gap-2 mt-2">
                 <button onClick={() => onSpeak(line.es, 'es')} className="px-2 py-1 text-xs border rounded-md hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">🔊 ES</button>
                 <button onClick={() => onSpeak(line.en, 'en')} className="px-2 py-1 text-xs border rounded-md hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">🔊 EN</button>
+                <button onClick={() => onAddToStudy(line)} className="px-2 py-1 text-xs border rounded-md hover:bg-gray-50 border-border text-text-muted hover:bg-card-background">⭐ Añadir a estudio</button>
               </div>
             </div>
           )

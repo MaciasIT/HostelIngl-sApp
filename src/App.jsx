@@ -178,6 +178,17 @@ export default function App() {
     playSet(phrases);
   };
 
+  const addToStudy = (line) => {
+    const newPhrase = {
+      id: raw.length,
+      es: line.es,
+      en: line.en,
+      categoria: selectedConversation.title,
+    };
+    setRaw([...raw, newPhrase]);
+    window.dispatchEvent(new CustomEvent('toast', { detail: 'Frase añadida a la lista principal' }));
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {!isFocusMode && (
@@ -225,7 +236,7 @@ export default function App() {
 
         {mode === "conversations" && (
           selectedConversation ? (
-            <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} onPlayAll={() => playConversation(selectedConversation)} />
+            <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} onPlayAll={() => playConversation(selectedConversation)} onAddToStudy={addToStudy} />
           ) : (
             <Conversations conversations={conversations} onSelectConversation={onSelectConversation} />
           )
