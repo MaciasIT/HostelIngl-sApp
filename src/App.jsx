@@ -24,40 +24,32 @@ export default function App() {
   const [raw, setRaw] = useState(() => {
     const phrases = initialData.phrases || [];
     let currentCategory = 'General'; // Default category
-    const categoryRegex = /\s*([IVXLCDM]+\.\s*.*)/;
+    const categoryRegex = /^[IVXLCDM]+\.\s*(.*)/; // Regex to capture category text
 
-    const processedPhrases = phrases.map(phrase => {
+    const processedPhrases = [];
+    phrases.forEach(phrase => {
       const es = phrase.spanish || '';
-      let cleanEs = es;
-      let newCategoryForNext = null;
-
       const match = es.match(categoryRegex);
-      if (match && match[1]) {
-        const potentialCat = match[1].trim();
-        if (potentialCat.length > 6) { // Avoid matching random numerals
-          newCategoryForNext = potentialCat;
-          cleanEs = es.replace(categoryRegex, '').trim();
+
+      if (match) {
+        // This is a category phrase, update currentCategory and skip adding to processedPhrases
+        currentCategory = match[1].trim();
+      } else {
+        // This is a regular phrase
+        let cleanEs = es;
+        // Clean up extraneous text from the dataset
+        const extraneousText1 = "Este listado abarca las frases más comunes y útiles para un camarero en un entorno de hostelería, permitiendo una comunicación fluida y profesional con clientes de habla inglesa.";
+        if (cleanEs.includes(extraneousText1)) {
+          cleanEs = cleanEs.replace(extraneousText1, '').trim();
         }
+        
+        processedPhrases.push({
+          es: cleanEs,
+          en: phrase.english,
+          source: phrase.source,
+          categoria: currentCategory,
+        });
       }
-
-      // Clean up extraneous text from the dataset
-      const extraneousText1 = "Este listado abarca las frases más comunes y útiles para un camarero en un entorno de hostelería, permitiendo una comunicación fluida y profesional con clientes de habla inglesa.";
-      if (cleanEs.includes(extraneousText1)) {
-        cleanEs = cleanEs.replace(extraneousText1, '').trim();
-      }
-      
-      const phraseData = {
-        es: cleanEs,
-        en: phrase.english,
-        source: phrase.source,
-        categoria: currentCategory,
-      };
-
-      if (newCategoryForNext) {
-        currentCategory = newCategoryForNext;
-      }
-
-      return phraseData;
     });
 
     // Add unique IDs after processing
