@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import initialData from "./hostelenglish_dataset_extended_v4.json";
+import conversationsData from "./conversations_extended_v4.json";
 import { LS_FAVS_KEY, saveMetrics, loadSRS, loadMetrics, todayISO, uniqueSorted, nowMs, exportFile } from "./utils/helpers";
 import { useTheme } from "./context/ThemeContext";
 
@@ -15,6 +16,8 @@ import { Exam } from "./components/Exam";
 import { Study } from "./components/Study";
 import { Dashboard } from "./components/Dashboard";
 import { Toasts } from "./components/Toasts";
+import { Conversations } from "./components/Conversations";
+import { Conversation } from "./components/Conversation";
 
 export default function App() {
   const [raw, setRaw] = useState(() => {
@@ -72,6 +75,8 @@ export default function App() {
   const [metrics, setMetrics] = useState(() => loadMetrics());
   const [timerStart, setTimerStart] = useState(null);
   const [isFocusMode, setIsFocusMode] = useState(false); // New state for focus mode
+  const [conversations, setConversations] = useState(conversationsData.conversations);
+  const [selectedConversation, setSelectedConversation] = useState(null);
 
   // Tema/Densidad
   const { theme, setTheme, density, setDensity } = useTheme();
@@ -160,6 +165,14 @@ export default function App() {
     return { todayMin, totalMin, todayReviews, acc, streak: metrics.streak || 0, lastStudy: metrics.lastStudyISO, totalReviews: metrics.total?.reviews || 0, totalCorrect: metrics.total?.correct || 0 };
   }, [metrics]);
 
+  const onSelectConversation = (id) => {
+    setSelectedConversation(conversations.find(c => c.id === id));
+  };
+
+  const onBackToConversations = () => {
+    setSelectedConversation(null);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {!isFocusMode && (
@@ -185,7 +198,7 @@ export default function App() {
         />
       )}
 
-      {!isFocusMode && (
+      {!isFocusMode && mode !== 'conversations' && (
         <Filters categories={categories} value={category} onChange={setCategory} query={query} onQuery={setQuery} count={filtered.length} />
       )}
 
@@ -203,6 +216,14 @@ export default function App() {
             </div>
             <Browse items={filtered} onFav={toggleFav} favs={favs} page={page} perPage={perPage} onPage={setPage} onSpeakES={(t)=>speakOnce(t,'es-ES')} onSpeakEN={(t)=>speakOnce(t,'en-GB')} />
           </>
+        )}
+
+        {mode === "conversations" && (
+          selectedConversation ? (
+            <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} />
+          ) : (
+            <Conversations conversations={conversations} onSelectConversation={onSelectConversation} />
+          )
         )}
 
         {mode === "flash" && (

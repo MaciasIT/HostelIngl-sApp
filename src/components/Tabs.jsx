@@ -4,6 +4,7 @@ import { classNames } from "../utils/helpers";
 export function Tabs({ mode, onMode, dueCount }) {
   const tabs = [
     { id: "browse", name: "Frases" },
+    { id: "conversations", name: "Conversaciones" },
     { id: "flash", name: "Flashcards" },
     { id: "quiz", name: "Quiz" },
     { id: "exam", name: "Examen" },
