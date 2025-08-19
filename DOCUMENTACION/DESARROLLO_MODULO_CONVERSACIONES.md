@@ -37,3 +37,9 @@ Se han realizado los siguientes cambios para integrar el nuevo módulo en la apl
 -   **Añadir Frases a Estudio**: Cada línea de diálogo en una conversación ahora tiene un botón "⭐ Añadir a estudio".
 -   **Funcionalidad**: Al hacer clic en este botón, la frase (tanto en español como en inglés) se añade a la lista principal de frases de la aplicación. Esto permite que la frase pueda ser utilizada en los otros modos de estudio, como Flashcards, Quiz y, lo más importante, el sistema de repetición espaciada (SRS) del modo "Estudio".
 
+## 6. Visor de Documentación
+
+- **`Documentation.jsx`**: Se ha creado un nuevo componente que funciona como un modal para mostrar la documentación.
+- **Carga de Markdown**: El componente carga dinámicamente los archivos `MANUAL_DE_USUARIO.md` y `DOCUMENTACION_TECNICA.md` usando `fetch`.
+- **Renderizado de HTML**: Incluye una función simple que convierte el texto Markdown a HTML para una visualización amigable.
+- **Integración en UI**: Se ha añadido un botón "Ayuda" en la `TopBar` que, a través de un nuevo estado `showDocs` en `App.jsx`, controla la visibilidad de este modal.

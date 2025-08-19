@@ -18,6 +18,7 @@ import { Dashboard } from "./components/Dashboard";
 import { Toasts } from "./components/Toasts";
 import { Conversations } from "./components/Conversations";
 import { Conversation } from "./components/Conversation";
+import { Documentation } from "./components/Documentation";
 
 export default function App() {
   const [raw, setRaw] = useState(() => {
@@ -77,6 +78,7 @@ export default function App() {
   const [isFocusMode, setIsFocusMode] = useState(false); // New state for focus mode
   const [conversations, setConversations] = useState(conversationsData.conversations);
   const [selectedConversation, setSelectedConversation] = useState(null);
+  const [showDocs, setShowDocs] = useState(false);
 
   // Tema/Densidad
   const { theme, setTheme, density, setDensity } = useTheme();
@@ -189,10 +191,16 @@ export default function App() {
     window.dispatchEvent(new CustomEvent('toast', { detail: 'Frase añadida a la lista principal' }));
   };
 
+  const toggleDocs = () => {
+    setShowDocs(!showDocs);
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      {showDocs && <Documentation onClose={toggleDocs} />}
+
       {!isFocusMode && (
-        <TopBar total={raw.length} loaded={raw.length > 0} onFileLoaded={(arr) => setRaw(arr)} onExport={(type) => exportFile(filtered, type)} onAdminUpload={(pdfFile) => alert(`(Simulación) Subida de PDF: ${pdfFile.name}`)} dueCount={dueCount} kpis={kpis} theme={theme} setTheme={setTheme} density={density} setDensity={setDensity} isFocusMode={isFocusMode} setIsFocusMode={setIsFocusMode} />
+        <TopBar total={raw.length} loaded={raw.length > 0} onFileLoaded={(arr) => setRaw(arr)} onExport={(type) => exportFile(filtered, type)} onAdminUpload={(pdfFile) => alert(`(Simulación) Subida de PDF: ${pdfFile.name}`)} dueCount={dueCount} kpis={kpis} theme={theme} setTheme={setTheme} density={density} setDensity={setDensity} isFocusMode={isFocusMode} setIsFocusMode={setIsFocusMode} onShowDocs={toggleDocs} />
       )}
 
       {!isFocusMode && (

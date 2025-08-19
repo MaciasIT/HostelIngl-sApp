@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import toast from 'react-hot-toast';
 import { ThemeSelector } from "./ThemeSelector"; // Import ThemeSelector
 
-export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, dueCount, kpis, theme, setTheme, density, setDensity, isFocusMode, setIsFocusMode }) {
+export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, dueCount, kpis, theme, setTheme, density, setDensity, isFocusMode, setIsFocusMode, onShowDocs }) {
   const fileRef = useRef(null);
   const pdfRef = useRef(null);
   return (
@@ -16,6 +16,7 @@ export function TopBar({ onFileLoaded, total, loaded, onExport, onAdminUpload, d
           </div>
         </div>
         <div className="flex-1" />
+        <button onClick={onShowDocs} className="px-3 py-1.5 rounded-xl border border-gray-300 text-sm border-border text-text-base">Ayuda</button>
         <span className="hidden md:inline-flex items-center text-xs text-gray-600 text-text-muted mr-2" title="Tarjetas vencidas hoy">🔁 Estudio hoy: <b className="ml-1">{dueCount}</b></span>
         <button onClick={() => fileRef.current?.click()} title="Importar JSON" aria-label="Importar archivo JSON" className="px-3 py-1.5 rounded-xl border border-gray-300 hover:bg-gray-50 text-sm border-border hover:bg-background text-text-base">Importar JSON</button>
         <input ref={fileRef} type="file" accept="application/json" className="hidden" onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; const text = await f.text(); try { const data = JSON.parse(text); const normalized = Array.isArray(data) ? data : data.items || []; onFileLoaded(normalized); window.dispatchEvent(new CustomEvent('toast', { detail: 'Dataset importado' })); } catch { alert("Archivo JSON inválido"); } }} />
