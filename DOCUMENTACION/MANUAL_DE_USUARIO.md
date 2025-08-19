@@ -30,7 +30,7 @@ Es la vista principal. Aquí puedes explorar la lista completa de frases.
 Este nuevo modo te permite explorar diálogos completos en diferentes escenarios de hostelería.
 
 - **Explorar Conversaciones**: En la vista principal, verás una lista de conversaciones con su título y escenario. Haz clic en una para ver el diálogo completo.
-- **Diálogo Interactivo**: Dentro de una conversación, las frases en inglés están ocultas por defecto. Haz clic en la frase en español para revelar su traducción.
+- **Diálogo Interactivo**: Dentro de una conversación, las frases en español y su traducción al inglés se muestran por defecto.
 - **Audio Individual**: Escucha la pronunciación de cada línea en español o inglés con los botones 🔊.
 - **Reproducir Todo**: Usa el botón "▶ Reproducir todo" para escuchar la conversación completa de principio a fin.
 - **Modo Role-Playing**: Selecciona un rol (ej. "Recepcionista") en el menú desplegable "Tu Rol". Las líneas de ese personaje se ocultarán para que puedas practicar diciéndolas. Haz clic en "Mostrar línea" para ver el texto original y comprobar tu precisión.
