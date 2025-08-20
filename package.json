@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MaciasIT.github.io/HostelInglesApp",
+  "homepage": "https://MaciasIT.github.io/HostelIngl-sApp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
