@@ -18,10 +18,10 @@ export function Documentation({ onClose }) {
   const [activeTab, setActiveTab] = useState('user');
 
   useEffect(() => {
-    fetch('DOCUMENTACION/MANUAL_DE_USUARIO.md')
+    fetch('/DOCUMENTACION/MANUAL_DE_USUARIO.md')
       .then(res => res.text())
       .then(text => setUserManual(markdownToHtml(text)));
-    fetch('DOCUMENTACION/DOCUMENTACION_TECNICA.md')
+    fetch('/DOCUMENTACION/DOCUMENTACION_TECNICA.md')
       .then(res => res.text())
       .then(text => setTechDocs(markdownToHtml(text)));
   }, []);
