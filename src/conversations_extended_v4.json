@@ -54,8 +54,7 @@
           "es": "Muchas gracias.",
           "en": "Thank you very much."
         }
-      ],
-      "categoria": "Recepción"
+      ]
     },
     {
       "id": "conv2",
@@ -91,8 +90,7 @@
           "es": "Contiene lechugas mixtas, tomate, pepino y una vinagreta ligera. Voy a confirmarlo con el chef para asegurar que no lleve frutos secos.",
           "en": "It contains mixed greens, tomatoes, cucumber, and a light vinaigrette. Let me double-check with the chef to ensure it is nut-free."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv3",
@@ -133,8 +131,7 @@
           "es": "Se sirve con arroz y verduras al vapor.",
           "en": "It is served with rice and steamed vegetables."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv4",
@@ -170,8 +167,7 @@
           "es": "Gracias, hasta luego.",
           "en": "Thank you! See you later."
         }
-      ],
-      "categoria": "Recepción"
+      ]
     },
     {
       "id": "conv5",
@@ -212,8 +208,7 @@
           "es": "Gracias y esperamos verle pronto de nuevo. ¡Que tenga un buen viaje!",
           "en": "Thank you and hope to see you again soon. Have a safe journey!"
         }
-      ],
-      "categoria": "Recepción"
+      ]
     },
     {
       "id": "conv6",
@@ -244,8 +239,7 @@
           "es": "Acepte mis disculpas. Veré qué puedo hacer. Se lo cambiaré y revisaré la cuenta ahora mismo.",
           "en": "My apologies. I'll see what I can do. I'll change it for you and let me double-check the bill right away."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv7",
@@ -281,8 +275,7 @@
           "es": "Permítame comprobar si hay una mesa disponible... Sí, tenemos una mesa. Por aquí, por favor.",
           "en": "Let me check if we have a table available... Yes, we have a table available. Right this way, please."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv8",
@@ -323,8 +316,7 @@
           "es": "Excelente elección. Vuelvo enseguida con su copa.",
           "en": "A fine choice. I'll be right back with your glass."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv9",
@@ -375,8 +367,7 @@
           "es": "Hecho. Les esperamos a las 21:00 en la terraza. Gracias.",
           "en": "Done. We’ll see you at 9 p.m. on the terrace. Thank you."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv10",
@@ -427,8 +418,7 @@
           "es": "Con gusto. Les traigo la carta de comidas y bebidas.",
           "en": "My pleasure. I’ll bring the food and drink menus."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv11",
@@ -479,8 +469,7 @@
           "es": "Gracias.",
           "en": "Thank you."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv12",
@@ -531,8 +520,7 @@
           "es": "A usted. ¡Que la disfruten!",
           "en": "You’re welcome. Enjoy!"
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv13",
@@ -583,8 +571,7 @@
           "es": "Estupendo, lo pongo en marcha.",
           "en": "Great, I’ll put that in right away."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv14",
@@ -635,8 +622,7 @@
           "es": "A ustedes.",
           "en": "You’re welcome."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv15",
@@ -687,8 +673,7 @@
           "es": "Muy bien, gracias.",
           "en": "Very well, thank you."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv16",
@@ -739,8 +724,7 @@
           "es": "A usted.",
           "en": "You’re welcome."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv17",
@@ -791,8 +775,7 @@
           "es": "Gracias a usted por la paciencia.",
           "en": "Thank you for your patience."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv18",
@@ -843,8 +826,7 @@
           "es": "Muy bien, disfruten.",
           "en": "Very well, enjoy."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv19",
@@ -895,8 +877,7 @@
           "es": "Perfecto, enseguida los traigo.",
           "en": "Perfect, I’ll bring them right away."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv20",
@@ -947,8 +928,7 @@
           "es": "Muchas gracias. Paso con el datáfono.",
           "en": "Thank you very much. I’ll bring the card reader."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv21",
@@ -999,8 +979,7 @@
           "es": "A usted, ¡salud!",
           "en": "You’re welcome, cheers!"
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv22",
@@ -1051,8 +1030,7 @@
           "es": "A ustedes. Espero que estén más cómodos.",
           "en": "You’re welcome. I hope you’ll be more comfortable."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv23",
@@ -1103,8 +1081,7 @@
           "es": "Gracias por la atención.",
           "en": "Thanks for the attention."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv24",
@@ -1155,8 +1132,7 @@
           "es": "Hecho. Sale enseguida.",
           "en": "Done. Coming right up."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv25",
@@ -1207,8 +1183,7 @@
           "es": "Perfecto, en un momento lo tiene.",
           "en": "Perfect, you’ll have it in a moment."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv26",
@@ -1259,8 +1234,7 @@
           "es": "Perfecto, lo preparo ahora mismo, sin clara y sin frutos secos.",
           "en": "Perfect, I’ll prepare it right away, no egg white and no nuts."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv27",
@@ -1311,8 +1285,7 @@
           "es": "Enseguida lo traigo.",
           "en": "I’ll bring that right away."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv28",
@@ -1363,8 +1336,7 @@
           "es": "Hecho, ahora mismo se la traigo.",
           "en": "Done, I’ll bring it now."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv29",
@@ -1415,8 +1387,7 @@
           "es": "Gracias por avisar.",
           "en": "Thanks for the heads-up."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv30",
@@ -1467,8 +1438,7 @@
           "es": "Anotado. Nos alegra que apareciera.",
           "en": "Noted. We’re glad it turned up."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv31",
@@ -1519,8 +1489,7 @@
           "es": "A usted.",
           "en": "You’re welcome."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv32",
@@ -1571,8 +1540,7 @@
           "es": "Con gusto.",
           "en": "My pleasure."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv33",
@@ -1623,8 +1591,7 @@
           "es": "Aquí lo tiene, ¡salud!",
           "en": "Here you are, cheers!"
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv34",
@@ -1675,8 +1642,7 @@
           "es": "Enseguida lo tiene.",
           "en": "You’ll have it right away."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv35",
@@ -1727,8 +1693,7 @@
           "es": "Un placer, ¡hasta pronto!",
           "en": "My pleasure, see you soon!"
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv36",
@@ -1779,8 +1744,7 @@
           "es": "A ustedes, que lo disfruten.",
           "en": "You’re welcome, enjoy."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv37",
@@ -1831,8 +1795,7 @@
           "es": "A usted, ¡salud!",
           "en": "You’re welcome, cheers!"
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv38",
@@ -1883,8 +1846,7 @@
           "es": "Hasta mañana, que tengan buena noche.",
           "en": "See you tomorrow, have a good night."
         }
-      ],
-      "categoria": "Restaurante"
+      ]
     },
     {
       "id": "conv39",
@@ -1925,8 +1887,7 @@
           "es": "Aquí lo tiene de nuevo, caliente y recién salido.",
           "en": "Here it is again, hot and fresh out."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv40",
@@ -1967,8 +1928,7 @@
           "es": "De inmediato, y supervisaré que su pedido salga lo antes posible.",
           "en": "Right away, and I’ll make sure your order comes out as soon as possible."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv41",
@@ -2009,8 +1969,7 @@
           "es": "Ya mismo tendrá su pasta correcta.",
           "en": "You’ll have your correct pasta right away."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv42",
@@ -2051,8 +2010,7 @@
           "es": "Gracias a usted por señalarlo.",
           "en": "Thank you for pointing it out."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv43",
@@ -2093,8 +2051,7 @@
           "es": "A ustedes, disfruten.",
           "en": "You’re welcome, enjoy."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv44",
@@ -2135,8 +2092,7 @@
           "es": "Con gusto, queremos que disfrute.",
           "en": "My pleasure, we want you to enjoy."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv45",
@@ -2177,8 +2133,7 @@
           "es": "Encantado de resolverlo.",
           "en": "Glad to fix it."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv46",
@@ -2219,8 +2174,7 @@
           "es": "Queremos que estén cómodos.",
           "en": "We want you to be comfortable."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv47",
@@ -2261,8 +2215,7 @@
           "es": "De nada, disculpe la molestia.",
           "en": "You’re welcome, sorry for the inconvenience."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv48",
@@ -2303,8 +2256,7 @@
           "es": "Aquí lo tiene recién hecho.",
           "en": "Here it is freshly made."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv49",
@@ -2345,8 +2297,7 @@
           "es": "Disculpas por el error.",
           "en": "Sorry for the mistake."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv50",
@@ -2387,8 +2338,7 @@
           "es": "Aquí está su postre, disculpe la espera.",
           "en": "Here’s your dessert, sorry for the wait."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv51",
@@ -2429,8 +2379,7 @@
           "es": "A usted.",
           "en": "You’re welcome."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv52",
@@ -2471,8 +2420,7 @@
           "es": "Gracias por su paciencia.",
           "en": "Thank you for your patience."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     },
     {
       "id": "conv53",
@@ -2513,8 +2461,7 @@
           "es": "Esperamos que vuelvan y disfruten la próxima vez.",
           "en": "We hope you come back and enjoy next time."
         }
-      ],
-      "categoria": "Quejas"
+      ]
     }
   ]
 }
