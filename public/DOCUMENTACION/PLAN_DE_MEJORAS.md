@@ -79,3 +79,6 @@ Este documento detalla una serie de mejoras y nuevas funcionalidades que podría
 16. **Frameworks de UI:**
     *   **Descripción:** Considerar el uso de librerías de componentes como shadcn/ui o Headless UI para construir interfaces más robustas, accesibles y con un desarrollo más eficiente. Estas librerías proporcionan componentes pre-construidos y accesibles que se integran bien con Tailwind CSS.
     *   **Beneficio:** Acelerar el desarrollo de la UI, asegurar la accesibilidad de los componentes y mantener una alta calidad visual y funcional.
+
+17. **Mejoras Mitxel**
+    +  **Descripción:** 1 El modo focus no tiene opcion de salir 2 Conversacions dos voces diferentes en el mismo idioma 3 Contraste en los modos azul, verde y claro. Fondo de botones y texto en botones no se ve en algunos modos. 4. la velocidad del audio no se puede modificar, no funciona 
