@@ -80,5 +80,16 @@ Este documento detalla una serie de mejoras y nuevas funcionalidades que podría
     *   **Descripción:** Considerar el uso de librerías de componentes como shadcn/ui o Headless UI para construir interfaces más robustas, accesibles y con un desarrollo más eficiente. Estas librerías proporcionan componentes pre-construidos y accesibles que se integran bien con Tailwind CSS.
     *   **Beneficio:** Acelerar el desarrollo de la UI, asegurar la accesibilidad de los componentes y mantener una alta calidad visual y funcional.
 
-17. **Mejoras Mitxel**
-    +  **Descripción:** 1 El modo focus no tiene opcion de salir 2 Conversacions dos voces diferentes en el mismo idioma 3 Contraste en los modos azul, verde y claro. Fondo de botones y texto en botones no se ve en algunos modos. 4. la velocidad del audio no se puede modificar, no funciona 
+## IV. Mejoras Mitxel
+
+*   **1. Modo Focus sin opción de salir:**
+    *   **Descripción:** El modo de enfoque actual no tiene un botón o una forma clara de salir, lo que puede ser confuso para el usuario.
+*   **2. Voces diferentes en Conversaciones:**
+    *   **Descripción:** Utilizar dos voces distintas (una para cada participante) en el mismo idioma durante la reproducción de las conversaciones para hacerlas más realistas y fáciles de seguir.
+*   **3. Contraste de colores:**
+    *   **Descripción:** Revisar y ajustar el contraste de los colores en los temas "azul", "verde" y "claro", ya que actualmente el fondo de algunos botones y el texto no tienen suficiente contraste, dificultando la lectura.
+*   **4. Control de velocidad de audio:**
+    *   **Descripción:** El control para ajustar la velocidad de reproducción del audio no está funcionando correctamente.
+*   **5. Página de Mantenimiento:**
+    *   **Descripción:** Crear una página estática de "mantenimiento" o "en obras" para mostrar a los usuarios mientras se realizan cambios importantes en la aplicación.
+    *   **Beneficio:** Evitar que los usuarios vean una versión a medias o con errores, mejorando la comunicación y la experiencia del usuario durante las actualizaciones.
