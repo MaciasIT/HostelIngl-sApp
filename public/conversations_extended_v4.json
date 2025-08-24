@@ -4,6 +4,7 @@
       "id": "conv1",
       "title": "Haciendo el check-in en el hotel",
       "scenario": "Un cliente llega al mostrador de recepción para registrarse.",
+      "categoria": "Recepción",
       "participants": [
         "Recepcionista",
         "Huésped"
@@ -60,6 +61,7 @@
       "id": "conv2",
       "title": "Alergias y restricciones dietéticas en el restaurante",
       "scenario": "Un cliente informa de una alergia alimentaria y el camarero gestiona opciones seguras.",
+      "categoria": "Restaurante",
       "participants": [
         "Camarero/a",
         "Cliente"
@@ -96,6 +98,7 @@
       "id": "conv3",
       "title": "Recomendando y describiendo platos",
       "scenario": "El camarero sugiere especialidades y explica la preparación y guarniciones.",
+      "categoria": "Restaurante",
       "participants": [
         "Camarero/a",
         "Cliente"
@@ -137,6 +140,7 @@
       "id": "conv4",
       "title": "Check-in: información de servicios y horarios",
       "scenario": "Variación del check-in donde se informa de horarios de desayuno y se ofrece ayuda.",
+      "categoria": "Recepción",
       "participants": [
         "Recepcionista",
         "Huésped"
@@ -173,6 +177,7 @@
       "id": "conv5",
       "title": "Check-out y pago de la estancia",
       "scenario": "El huésped realiza la salida; se explica la factura y el método de pago.",
+      "categoria": "Recepción",
       "participants": [
         "Recepcionista",
         "Huésped"
@@ -214,6 +219,7 @@
       "id": "conv6",
       "title": "Gestión de quejas: comida fría y cobro incorrecto",
       "scenario": "El cliente inicia la queja y el camarero ofrece soluciones y revisa la cuenta.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -245,6 +251,7 @@
       "id": "conv7",
       "title": "Llegada al restaurante y asignación de mesa",
       "scenario": "El cliente llega sin reserva y acepta esperar por una mesa.",
+      "categoria": "Restaurante",
       "participants": [
         "Camarero/a",
         "Cliente"
@@ -281,6 +288,7 @@
       "id": "conv8",
       "title": "En el bar: pedir bebida y preferencias",
       "scenario": "El cliente pide la carta de bebidas y especifica sin hielo.",
+      "categoria": "Bar",
       "participants": [
         "Bartender/a",
         "Cliente"
@@ -322,6 +330,7 @@
       "id": "conv9",
       "title": "Reserva telefónica en restaurante (hora y preferencias)",
       "scenario": "Un cliente llama para reservar mesa indicando hora, número de personas y preferencia de terraza/interior.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -373,6 +382,7 @@
       "id": "conv10",
       "title": "Llegada al restaurante con reserva",
       "scenario": "El cliente llega con reserva y el camarero confirma datos y acompaña a la mesa.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -424,6 +434,7 @@
       "id": "conv11",
       "title": "Pedido de bebidas antes de revisar la carta",
       "scenario": "El cliente pide bebidas iniciales mientras decide la comida.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -475,6 +486,7 @@
       "id": "conv12",
       "title": "Recomendación de vino para el plato principal",
       "scenario": "El cliente pide sugerencia de vino para acompañar un plato concreto.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -526,6 +538,7 @@
       "id": "conv13",
       "title": "Entrantes para compartir",
       "scenario": "El cliente pide tapas y entrantes para compartir; el camarero confirma cantidades.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -577,6 +590,7 @@
       "id": "conv14",
       "title": "Explicar tiempos de espera en cocina",
       "scenario": "El cliente pregunta por el tiempo de espera; el camarero da tiempos estimados.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -628,6 +642,7 @@
       "id": "conv15",
       "title": "Cambio de guarnición del plato",
       "scenario": "El cliente pide sustituir la guarnición por otra opción disponible.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -679,6 +694,7 @@
       "id": "conv16",
       "title": "Solicitar caja para llevar",
       "scenario": "El cliente no termina el plato y solicita llevarse lo que sobra.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -730,6 +746,7 @@
       "id": "conv17",
       "title": "Error en el pedido y solución",
       "scenario": "Llega un plato equivocado; el camarero se disculpa y lo corrige.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -781,6 +798,7 @@
       "id": "conv18",
       "title": "Pedir cubiertos y platos extra",
       "scenario": "El cliente solicita cubiertos/platos adicionales para compartir.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -832,6 +850,7 @@
       "id": "conv19",
       "title": "Pedir la carta de postres y decidir",
       "scenario": "El cliente pide la carta de postres; el camarero describe opciones populares.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -883,6 +902,7 @@
       "id": "conv20",
       "title": "Dividir la cuenta según consumo",
       "scenario": "El grupo solicita pagar por separado de acuerdo a lo que pidió cada uno.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -934,6 +954,7 @@
       "id": "conv21",
       "title": "Recomendación de cócteles de la casa",
       "scenario": "El cliente pide una bebida especial y el bartender recomienda cócteles.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -985,6 +1006,7 @@
       "id": "conv22",
       "title": "Solicitar cambio de mesa",
       "scenario": "El cliente pide cambiar a una mesa más tranquila; el camarero gestiona el cambio.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -1036,6 +1058,7 @@
       "id": "conv23",
       "title": "Confirmación de alergias al tomar la orden",
       "scenario": "El camarero verifica alergias y restricciones dietéticas antes de pasar el pedido a cocina.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -1087,6 +1110,7 @@
       "id": "conv24",
       "title": "Happy hour: qué incluye y horarios",
       "scenario": "El cliente pregunta por la happy hour y qué bebidas entran en la promoción.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1138,6 +1162,7 @@
       "id": "conv25",
       "title": "Pedir un mocktail (cóctel sin alcohol)",
       "scenario": "El cliente quiere una alternativa sin alcohol con perfil cítrico.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1189,6 +1214,7 @@
       "id": "conv26",
       "title": "Alergias en coctelería (clara de huevo, frutos secos)",
       "scenario": "El cliente indica alergias y el bartender adapta la receta.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1240,6 +1266,7 @@
       "id": "conv27",
       "title": "Preguntar por cervezas artesanas locales",
       "scenario": "El cliente quiere probar cervezas locales y pide una recomendación.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1291,6 +1318,7 @@
       "id": "conv28",
       "title": "Degustación de vinos por copa",
       "scenario": "El cliente desea probar diferentes vinos por copa antes de decidir.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1342,6 +1370,7 @@
       "id": "conv29",
       "title": "Última ronda antes del cierre",
       "scenario": "El bartender anuncia última ronda y gestiona los últimos pedidos.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1393,6 +1422,7 @@
       "id": "conv30",
       "title": "Pérdida de objetos en barra",
       "scenario": "El cliente cree haber perdido un objeto y el bartender verifica objetos perdidos.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1444,6 +1474,7 @@
       "id": "conv31",
       "title": "Pago inmediato por cada ronda",
       "scenario": "El cliente prefiere pagar cada ronda al momento.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1495,6 +1526,7 @@
       "id": "conv32",
       "title": "Preguntar por tapas disponibles en barra",
       "scenario": "El cliente pregunta si hay tapas o pinchos disponibles en la barra.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1546,6 +1578,7 @@
       "id": "conv33",
       "title": "Pedir un cóctel con menos alcohol",
       "scenario": "El cliente solicita un cóctel más suave y el bartender ajusta la receta.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1597,6 +1630,7 @@
       "id": "conv34",
       "title": "Recomendación de cóctel de autor",
       "scenario": "El bartender recomienda un cóctel de autor según preferencias del cliente.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1648,6 +1682,7 @@
       "id": "conv35",
       "title": "Dejar propina con pago con tarjeta",
       "scenario": "El cliente quiere dejar propina y pregunta si puede incluirla en el pago con tarjeta.",
+      "categoria": "Restaurante",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1699,6 +1734,7 @@
       "id": "conv36",
       "title": "Dividir una botella en varias copas",
       "scenario": "El cliente pide abrir una botella y servir en varias copas con control de cantidades.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1750,6 +1786,7 @@
       "id": "conv37",
       "title": "Explicación de un licor típico español",
       "scenario": "El cliente extranjero pide explicación de un licor local y cómo se toma.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1801,6 +1838,7 @@
       "id": "conv38",
       "title": "Cierre de caja: última llamada y negativa cortés",
       "scenario": "El bar está cerrando y el bartender explica que ya no se sirven bebidas.",
+      "categoria": "Bar",
       "participants": [
         "Cliente",
         "Bartender/a"
@@ -1852,6 +1890,7 @@
       "id": "conv39",
       "title": "Queja: plato frío",
       "scenario": "Cliente recibe un plato frío y se queja.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -1893,6 +1932,7 @@
       "id": "conv40",
       "title": "Queja: retraso en servicio",
       "scenario": "Cliente se queja de que su pedido tarda demasiado.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -1934,6 +1974,7 @@
       "id": "conv41",
       "title": "Queja: pedido equivocado",
       "scenario": "Cliente recibe un plato distinto al que pidió.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -1975,6 +2016,7 @@
       "id": "conv42",
       "title": "Queja: error en la cuenta",
       "scenario": "Cliente nota un cobro extra en la cuenta.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2016,6 +2058,7 @@
       "id": "conv43",
       "title": "Queja: parte del pedido olvidada",
       "scenario": "Cliente indica que falta parte de lo que pidió.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2057,6 +2100,7 @@
       "id": "conv44",
       "title": "Queja: vino pasado",
       "scenario": "Cliente se queja de que el vino sabe mal.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2098,6 +2142,7 @@
       "id": "conv45",
       "title": "Queja: silla rota",
       "scenario": "Cliente se queja de una silla defectuosa.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2139,6 +2184,7 @@
       "id": "conv46",
       "title": "Queja: ruido excesivo",
       "scenario": "Cliente se queja del ruido.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2180,6 +2226,7 @@
       "id": "conv47",
       "title": "Queja: comida poco hecha",
       "scenario": "Cliente indica que la carne no está bien cocinada.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2221,6 +2268,7 @@
       "id": "conv48",
       "title": "Queja: café frío",
       "scenario": "Cliente se queja de café frío.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2262,6 +2310,7 @@
       "id": "conv49",
       "title": "Queja: sobrecargo no pedido",
       "scenario": "Cliente ve un cargo por algo no pedido.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2303,6 +2352,7 @@
       "id": "conv50",
       "title": "Queja: tardanza en postre",
       "scenario": "Cliente espera demasiado el postre.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2344,6 +2394,7 @@
       "id": "conv51",
       "title": "Queja: hablar con encargado",
       "scenario": "Cliente pide hablar con encargado.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2385,6 +2436,7 @@
       "id": "conv52",
       "title": "Queja: limpieza en baño",
       "scenario": "Cliente se queja del estado del baño.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
@@ -2426,6 +2478,7 @@
       "id": "conv53",
       "title": "Resolución con invitación de la casa",
       "scenario": "El camarero compensa una molestia con un detalle de la casa.",
+      "categoria": "Quejas",
       "participants": [
         "Cliente",
         "Camarero/a"
