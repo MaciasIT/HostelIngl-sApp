@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Gemini file
+GEMINI.md
+
+# Imagenes
+png/

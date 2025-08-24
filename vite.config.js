@@ -5,8 +5,7 @@ import autoprefixer from 'autoprefixer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Añade esta línea
-  base: "/HostelInglesApp/",
+  
   plugins: [react()],
   css: {
     postcss: {
