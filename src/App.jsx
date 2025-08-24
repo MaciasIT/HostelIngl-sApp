@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import initialData from "./hostelenglish_dataset_clean.json";
-import conversationsData from "./conversations_extended_v4.json";
+
 import { LS_FAVS_KEY, saveMetrics, loadSRS, loadMetrics, todayISO, uniqueSorted, nowMs, exportFile } from "./utils/helpers";
 import { useTheme } from "./context/ThemeContext";
 
@@ -21,13 +20,7 @@ import { Conversation } from "./components/Conversation";
 import { Documentation } from "./components/Documentation";
 
 export default function App() {
-  const [raw, setRaw] = useState(() => {
-    const phrases = initialData.phrases || [];
-    return phrases.map((phrase, index) => ({
-      ...phrase,
-      id: index,
-    }));
-  });
+  const [raw, setRaw] = useState([]);
   const [category, setCategory] = useState("");
   const [query, setQuery] = useState("");
   const [mode, setMode] = useState("browse");
@@ -38,9 +31,33 @@ export default function App() {
   const [metrics, setMetrics] = useState(() => loadMetrics());
   const [timerStart, setTimerStart] = useState(null);
   const [isFocusMode, setIsFocusMode] = useState(false); // New state for focus mode
-  const [conversations, setConversations] = useState(conversationsData.conversations);
+  const [conversations, setConversations] = useState([]);
   const [selectedConversation, setSelectedConversation] = useState(null);
   const [showDocs, setShowDocs] = useState(false);
+
+  useEffect(() => {
+    fetch('/hostelenglish_dataset_clean.json')
+      .then(res => res.text()) // Get response as text first
+      .then(text => {
+        console.log('Response for hostelenglish_dataset_clean.json:', text);
+        const data = JSON.parse(text);
+        const phrases = data.phrases || [];
+        setRaw(phrases.map((phrase, index) => ({
+          ...phrase,
+          id: index,
+        })));
+      })
+      .catch(err => console.error('Error fetching or parsing hostelenglish_dataset_clean.json:', err));
+
+    fetch('/conversations_extended_v4.json')
+      .then(res => res.text()) // Get response as text first
+      .then(text => {
+        console.log('Response for conversations_extended_v4.json:', text);
+        const data = JSON.parse(text);
+        setConversations(data.conversations || []);
+      })
+      .catch(err => console.error('Error fetching or parsing conversations_extended_v4.json:', err));
+  }, []);
 
   // Tema/Densidad
   const { theme, setTheme, density, setDensity } = useTheme();
@@ -129,8 +146,15 @@ export default function App() {
     return { todayMin, totalMin, todayReviews, acc, streak: metrics.streak || 0, lastStudy: metrics.lastStudyISO, totalReviews: metrics.total?.reviews || 0, totalCorrect: metrics.total?.correct || 0 };
   }, [metrics]);
 
+  const [conversationCategory, setConversationCategory] = useState("");
+  const conversationCategories = useMemo(() => uniqueSorted(conversations.map((x) => x.categoria)), [conversations]);
+  const filteredConversations = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return conversations.filter((x) => (!conversationCategory || x.categoria === conversationCategory) && (!q || x.title.toLowerCase().includes(q) || x.scenario.toLowerCase().includes(q)));
+  }, [conversations, conversationCategory, query]);
+
   const onSelectConversation = (id) => {
-    setSelectedConversation(conversations.find(c => c.id === id));
+    setSelectedConversation(filteredConversations.find(c => c.id === id));
   };
 
   const onBackToConversations = () => {
@@ -188,6 +212,10 @@ export default function App() {
         <Filters categories={categories} value={category} onChange={setCategory} query={query} onQuery={setQuery} count={filtered.length} />
       )}
 
+      {!isFocusMode && mode === 'conversations' && (
+        <Filters categories={conversationCategories} value={conversationCategory} onChange={setConversationCategory} query={query} onQuery={setQuery} count={filteredConversations.length} />
+      )}
+
       <div className="max-w-6xl mx-auto px-4 pb-10">
         {mode === "browse" && (
           <>
@@ -208,7 +236,7 @@ export default function App() {
           selectedConversation ? (
             <Conversation conversation={selectedConversation} onBack={onBackToConversations} onSpeak={(text, lang) => speakOnce(text, lang === 'es' ? 'es-ES' : 'en-GB')} onPlayAll={() => playConversation(selectedConversation)} onAddToStudy={addToStudy} />
           ) : (
-            <Conversations conversations={conversations} onSelectConversation={onSelectConversation} />
+            <Conversations conversations={filteredConversations} onSelectConversation={onSelectConversation} />
           )
         )}
 
