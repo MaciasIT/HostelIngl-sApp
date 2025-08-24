@@ -93,7 +93,21 @@ Aunque todo está en un solo archivo, la UI se puede descomponer lógicamente en
 
 ## 6. Módulo de Conversaciones
 
-El módulo de conversaciones se carga desde `src/conversations_extended_v4.json` y permite a los usuarios explorar diálogos interactivos. La lógica principal reside en `App.jsx`, que gestiona la selección de conversaciones y el estado de la interfaz. Los componentes `Conversations.jsx` y `Conversation.jsx` se encargan de la renderización.
+El módulo de conversaciones se carga desde `public/conversations_extended_v4.json` y permite a los usuarios explorar diálogos interactivos. La lógica principal reside en `App.jsx`, que gestiona la selección de conversaciones y el estado de la interfaz. Los componentes `Conversations.jsx` y `Conversation.jsx` se encargan de la renderización.
+
+### 6.1. Estructura de Datos de Conversaciones
+
+El fichero `conversations_extended_v4.json` contiene un array de objetos, donde cada objeto representa una conversación y tiene la siguiente estructura:
+
+- **id**: Un identificador único para la conversación (ej. "conv1").
+- **title**: El título de la conversación.
+- **scenario**: Una breve descripción del contexto de la conversación.
+- **categoria**: La categoría a la que pertenece la conversación (ej. "Recepción", "Restaurante", "Bar", "Quejas").
+- **participants**: Un array con los nombres de los participantes en el diálogo.
+- **dialogue**: Un array de objetos, donde cada objeto es una línea del diálogo con los siguientes campos:
+  - **speaker**: El nombre del participante que habla.
+  - **es**: El texto de la línea en español.
+  - **en**: El texto de la línea en inglés.
 
 ## 7. Posibles Mejoras a Futuro
 

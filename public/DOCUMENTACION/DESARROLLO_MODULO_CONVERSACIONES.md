@@ -43,3 +43,13 @@ Se han realizado los siguientes cambios para integrar el nuevo módulo en la apl
 - **Carga de Markdown**: El componente carga dinámicamente los archivos `MANUAL_DE_USUARIO.md` y `DOCUMENTACION_TECNICA.md` usando `fetch`.
 - **Renderizado de HTML**: Incluye una función simple que convierte el texto Markdown a HTML para una visualización amigable.
 - **Integración en UI**: Se ha añadido un botón "Ayuda" en la `TopBar` que, a través de un nuevo estado `showDocs` en `App.jsx`, controla la visibilidad de este modal.
+
+## 7. Categorización de Conversaciones
+
+Para mejorar la organización y el filtrado, se ha añadido una funcionalidad de categorías al módulo de conversaciones.
+
+-   **Ampliación del Dataset**: Se ha añadido un campo `categoria` a cada objeto de conversación en el fichero `public/conversations_extended_v4.json`. Las categorías definidas son: "Recepción", "Restaurante", "Bar" y "Quejas".
+
+-   **Filtro en la Interfaz**: Se ha añadido un nuevo componente de filtro en la vista de `Conversations`. Este componente es el mismo que se utiliza para filtrar las frases, pero adaptado para usar las categorías de las conversaciones.
+
+-   **Lógica de Filtrado**: La lógica de filtrado en `App.jsx` se ha actualizado para que el componente `Conversations` muestre solo las conversaciones que coinciden con la categoría seleccionada.

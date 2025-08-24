@@ -29,6 +29,7 @@ Es la vista principal. Aquí puedes explorar la lista completa de frases.
 
 Este nuevo modo te permite explorar diálogos completos en diferentes escenarios de hostelería.
 
+- **Filtrar por Categoría**: Usa el menú desplegable "Categoría" para ver solo conversaciones de una sección específica (ej. "Recepción", "Restaurante", "Bar", "Quejas").
 - **Explorar Conversaciones**: En la vista principal, verás una lista de conversaciones con su título y escenario. Haz clic en una para ver el diálogo completo.
 - **Diálogo Interactivo**: Dentro de una conversación, las frases en español y su traducción al inglés se muestran por defecto.
 - **Audio Individual**: Escucha la pronunciación de cada línea en español o inglés con los botones 🔊.
