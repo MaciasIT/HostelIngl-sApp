@@ -36,27 +36,21 @@ export default function App() {
   const [showDocs, setShowDocs] = useState(false);
 
   useEffect(() => {
-    fetch('/hostelenglish_dataset_clean.json')
-      .then(res => res.text()) // Get response as text first
-      .then(text => {
-        console.log('Response for hostelenglish_dataset_clean.json:', text);
-        const data = JSON.parse(text);
+    fetch(`${import.meta.env.BASE_URL}hostelenglish_dataset_clean.json`)
+      .then(res => res.json())
+      .then(data => {
         const phrases = data.phrases || [];
         setRaw(phrases.map((phrase, index) => ({
           ...phrase,
           id: index,
         })));
-      })
-      .catch(err => console.error('Error fetching or parsing hostelenglish_dataset_clean.json:', err));
+      });
 
-    fetch('/conversations_extended_v4.json')
-      .then(res => res.text()) // Get response as text first
-      .then(text => {
-        console.log('Response for conversations_extended_v4.json:', text);
-        const data = JSON.parse(text);
+    fetch(`${import.meta.env.BASE_URL}conversations_extended_v4.json`)
+      .then(res => res.json())
+      .then(data => {
         setConversations(data.conversations || []);
-      })
-      .catch(err => console.error('Error fetching or parsing conversations_extended_v4.json:', err));
+      });
   }, []);
 
   // Tema/Densidad
