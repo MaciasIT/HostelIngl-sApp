@@ -23,30 +23,37 @@ Para levantar el proyecto en un entorno local, sigue estos pasos:
 
 ```
 /
-├── DOCUMENTACION/
-│   ├── MANUAL_DE_USUARIO.md
-│   └── DOCUMENTACION_TECNICA.md
-├── node_modules/
+├── .gitignore
+├── DIARIO_DE_DESARROLLO.md
+├── eslint.config.js
+├── GEMINI.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
 ├── public/
+│   ├── DOCUMENTACION/
+│   │   ├── DESARROLLO_MODULO_CONVERSACIONES.md
+│   │   ├── DOCUMENTACION_TECNICA.md
+│   │   ├── MANUAL_DE_USUARIO.md
+│   │   ├── PLAN_DE_MEJORAS.md
+│   │   └── pdfs/
+│   ├── conversations_extended_v4.json
+│   ├── hostelenglish_dataset_clean.json
 │   └── vite.svg
+├── png/
+├── README.md
 ├── src/
 │   ├── assets/
-│   │   └── react.svg
-│   ├── components/              <-- Componentes de la UI
+│   ├── components/
 │   ├── context/
 │   ├── hooks/
 │   ├── utils/
-│   ├── conversations_extended_v4.json  <-- Dataset de conversaciones
-│   ├── hostelenglish_dataset_normalized.json  <-- El dataset principal
-│   ├── App.jsx                                <-- Componente raíz con toda la lógica
-│   ├── index.css                              <-- Estilos base de Tailwind
-│   └── main.jsx                               <-- Punto de entrada de React
-├── .gitignore
-├── index.html                                 <-- Plantilla HTML principal
-├── package.json
-├── postcss.config.js                          <-- Config. de PostCSS para Tailwind
-├── tailwind.config.js                         <-- Config. de Tailwind CSS
-└── vite.config.js                             <-- Config. del empaquetador Vite
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── tailwind.config.js
+└── vite.config.js
 ```
 
 ## 4. Arquitectura y Flujo de Datos
@@ -57,19 +64,17 @@ La aplicación reside en un único componente principal, `App.jsx`, que gestiona
 
 El estado se maneja con hooks de React (`useState`, `useMemo`, `useEffect`):
 
-- `raw`: Almacena el set de frases completo después de ser procesado. Se inicializa desde el archivo JSON importado.
-- `category`, `query`, `page`, `perPage`: Gestionan el estado de los filtros y la paginación.
+- `raw`: Almacena el set de frases completo. Se carga dinámicamente desde `public/hostelenglish_dataset_clean.json`.
+- `conversations`: Almacena el set de conversaciones. Se carga dinámicamente desde `public/conversations_extended_v4.json`.
+- `category`, `query`, `page`, `perPage`: Gestionan el estado de los filtros y la paginación para las frases.
+- `conversationCategory`: Gestiona el estado del filtro de categoría para las conversaciones.
 - `mode`: Controla qué vista o modo de estudio está activo (`browse`, `flash`, `quiz`, etc.).
 - `favs`, `srs`, `metrics`: Almacenan los datos del usuario (favoritos, progreso de estudio y estadísticas). Se inicializan y se persisten en `localStorage`.
 - `theme`, `density`: Gestionan el estado de la UI (tema oscuro/claro y densidad).
 
-### 4.2. Procesamiento de Datos
+### 4.2. Carga de Datos
 
-Al iniciarse, la aplicación importa los datos desde `src/hostelenglish_dataset_normalized.json` y realiza un pre-procesamiento para adaptarlos a lo que los componentes esperan:
-
-1.  **Normalización de Nombres**: Mapea los campos `spanish` a `es` y `english` a `en`.
-2.  **Extracción de Categorías**: Una rutina de expresiones regulares recorre las frases para detectar títulos de sección (ej. "VII. Dar Direcciones..."), los extrae como categorías y limpia el texto original.
-3.  **Asignación de IDs**: Asigna un ID numérico único a cada frase basado en su índice.
+Al iniciarse, la aplicación carga los datos de los ficheros JSON (`hostelenglish_dataset_clean.json` y `conversations_extended_v4.json`) de forma asíncrona desde la carpeta `public`. Esto asegura que la aplicación siempre utilice la versión más actualizada de los datos sin necesidad de reconstruir el proyecto.
 
 ### 4.3. Lógica de Estudio (SRS)
 
@@ -77,14 +82,14 @@ La función `reviewSM2` implementa una versión simplificada del algoritmo SM-2 
 
 ## 5. Componentes Principales
 
-Aunque todo está en un solo archivo, la UI se puede descomponer lógicamente en estos componentes:
+La UI se descompone en los siguientes componentes de React:
 
 - `TopBar`: La barra de navegación superior.
 - `Tabs`: La barra de pestañas para seleccionar el modo.
 - `Filters`: Los controles de filtrado por categoría y búsqueda.
 - `AudioBar`: Los controles para la reproducción de audio (voces, velocidad).
 - `Browse` y `PhraseRow`: La vista de tabla para explorar frases.
-- `Conversations` y `Conversation`: El nuevo módulo para explorar diálogos interactivos.
+- `Conversations` y `Conversation`: El módulo para explorar diálogos interactivos.
 - `Flashcards`: El modo de tarjetas de estudio.
 - `Quiz`: El modo de test de opción múltiple.
 - `Exam`: El modo de examen configurable.
@@ -93,7 +98,7 @@ Aunque todo está en un solo archivo, la UI se puede descomponer lógicamente en
 
 ## 6. Módulo de Conversaciones
 
-El módulo de conversaciones se carga desde `public/conversations_extended_v4.json` y permite a los usuarios explorar diálogos interactivos. La lógica principal reside en `App.jsx`, que gestiona la selección de conversaciones y el estado de la interfaz. Los componentes `Conversations.jsx` y `Conversation.jsx` se encargan de la renderización.
+El módulo de conversaciones se carga desde `public/conversations_extended_v4.json` y permite a los usuarios explorar diálogos interactivos. Ahora incluye un filtro por categorías para facilitar la búsqueda.
 
 ### 6.1. Estructura de Datos de Conversaciones
 
@@ -102,7 +107,7 @@ El fichero `conversations_extended_v4.json` contiene un array de objetos, donde 
 - **id**: Un identificador único para la conversación (ej. "conv1").
 - **title**: El título de la conversación.
 - **scenario**: Una breve descripción del contexto de la conversación.
-- **categoria**: La categoría a la que pertenece la conversación (ej. "Recepción", "Restaurante", "Bar", "Quejas").
+- **categoria**: La categoría a la que pertenece la conversación (ej. "Recepción", "Restaurante", "Quejas").
 - **participants**: Un array con los nombres de los participantes en el diálogo.
 - **dialogue**: Un array de objetos, donde cada objeto es una línea del diálogo con los siguientes campos:
   - **speaker**: El nombre del participante que habla.
