@@ -30,6 +30,8 @@ export const ThemeProvider = ({ children }) => {
     try {
       localStorage.setItem(LS_DENSITY_KEY, density);
     } catch {}
+    document.documentElement.classList.remove('density-comfortable', 'density-compact');
+    document.documentElement.classList.add(`density-${density}`);
   }, [density]);
 
   const value = {

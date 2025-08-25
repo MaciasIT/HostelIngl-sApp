@@ -45,3 +45,16 @@
   --color-border: #a7f3d0; /* emerald-300 */
   --color-card-background: #ffffff; /* white */
 }
+
+/* Density settings */
+.density-comfortable {
+  --density-padding-y: 0.75rem; /* py-3 */
+  --density-padding-x: 1.5rem; /* px-6 */
+  --density-font-size: 1rem; /* text-base */
+}
+
+.density-compact {
+  --density-padding-y: 0.5rem; /* py-2 */
+  --density-padding-x: 1rem; /* px-4 */
+  --density-font-size: 0.875rem; /* text-sm */
+}
